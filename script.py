@@ -20,6 +20,7 @@
 # BLOB - It is generally used for holding binary data.
 
 import sqlite3
+from students import Student
 
 conn = sqlite3.connect('students.db')
 
@@ -65,9 +66,49 @@ for record in results:
     print(record)
 
 
+# from student import Student
+
+
+
+# creating students objects
+std_one = Student('Paul', 'Ngetich', 87)
+
+std_two = Student('Joy', 'Kirui', 57)
+
+# Creating functions to run queries
+
+def insert_std(std):
+    with conn:
+        c.execute("INSERT INTO students VALUES('{}', '{}', '{}')".format(std.first_name, std.last_name,std.grade))
+
+def get_std_name(first_name, last_name):
+    c.execute("SELECT * FROM students WHERE first_name = ? AND last_name = ?", (first_name, last_name))
+    return c.fetchall()
+
+def update_grade(std, grade):
+    with conn:
+        c.execute("UPDATE students SET grade = ? WHERE first_name = ? AND last_name = ?", 
+                  (grade, std.first_name, std.last_name))
+        
+def remove_std(std):
+    with conn:
+        c.execute("DELETE FROM students WHERE first_name = ? AND last_name = ?", 
+                  (std.first_name, std.last_name))
+
+
+# calling the functions
+insert_std(std_one) 
+
+student_results = get_std_name('Damaris',"Kerubo")
+print(student_results)
+
+# update_grade(std_one)
+update_grade(std_one, 95)
+
+# Remove a student from the database
+# to_be_deleted = Student("Paul", "Ngetich", 87)
+# remove_std(to_be_deleted)
+
+
 conn.commit()
-
 conn.close()
-
-# Deleting a Table
-c.execute("DROP TABLE students")

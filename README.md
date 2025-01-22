@@ -14,7 +14,7 @@ A programming language that is used to manage relational databases and perform o
 
  #### Data types in SQL
 ###### NULL - represents "no value
-###### TEXT - 
+###### TEXT - Alphabetic letters and words
 ###### INTEGER -whole numbers
 ###### REAL - old decimal
 ###### BLOB - It is generally used for holding binary data.

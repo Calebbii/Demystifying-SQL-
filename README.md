@@ -1,7 +1,7 @@
 # SQL
 
 #### What is SQL 
-A programming language that is used to manage relational databases and perform operations on the data that they contain.
+A programming language used to manage relational databases and perform operations on the data they contain.
 
 #### Installing and setting up sqlite
 `sudo apt install sqlite3`

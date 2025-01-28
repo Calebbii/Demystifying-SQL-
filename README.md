@@ -6,11 +6,11 @@ A programming language that is used to manage relational databases and perform o
 #### Installing and setting up sqlite
 `sudo apt install sqlite3`
 
-##### Connecting to the db
+##### Connecting to the DB
 
 ##### Inserting values to the db using SQL queries
 
-##### Retriving data value from the db using SQL queries
+##### Retrieving data value from the db using SQL queries
 
  #### Data types in SQL
 ###### NULL - represents "no value
